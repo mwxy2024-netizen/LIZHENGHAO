@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>李政浩 | 东海遗梦 AIGC 影视作品集</title>
+    <title>LIZHENGHAO动态设计作品集</title>
     <meta
       name="description"
-      content="李政浩 AIGC 三维动态影视设计作品集，《东海遗梦》AIGC 短片与视觉设定展示。"
+      content="LIZHENGHAO动态设计作品集，包含 AIGC 动态影视、短片影像、XR/MR 虚拟体验、品牌视觉与商业项目展示。"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -47,9 +47,16 @@
         box-sizing: border-box;
       }
 
+      :root {
+        --page-gutter: clamp(20px, 3.2vw, 40px);
+        --portfolio-max-width: 1280px;
+        --portfolio-width: min(var(--portfolio-max-width), calc(100vw - (var(--page-gutter) * 2)));
+      }
+
       html {
         scroll-behavior: smooth;
         background: #070b0a;
+        overflow-x: hidden;
       }
 
       body {
@@ -59,6 +66,38 @@
         color: #f7f7f4;
         font-family: Inter, sans-serif;
         letter-spacing: 0;
+        overflow-x: hidden;
+      }
+
+      img,
+      video {
+        max-width: 100%;
+      }
+
+      section,
+      header,
+      footer {
+        overflow-x: hidden;
+        overflow-x: clip;
+      }
+
+      .max-w-7xl {
+        width: 100%;
+        max-width: var(--portfolio-width) !important;
+      }
+
+      .max-w-6xl {
+        max-width: min(72rem, var(--portfolio-width)) !important;
+      }
+
+      .max-w-5xl {
+        max-width: min(64rem, var(--portfolio-width)) !important;
+      }
+
+      @media (max-width: 767px) {
+        :root {
+          --page-gutter: 16px;
+        }
       }
 
       .liquid-glass {
@@ -109,14 +148,13 @@
       .film-video {
         width: 100%;
         height: auto;
-        max-height: 82vh;
+        max-height: none;
         object-fit: contain;
         display: block;
         background: #000;
       }
 
       .film-video {
-        max-height: 86vh;
         border-radius: 8px;
       }
 
@@ -1460,7 +1498,7 @@
             ),
             h(
               "div",
-              { className: "grid gap-0" },
+              { className: "grid gap-3 md:gap-5" },
               h("video", {
                 className: "block h-auto w-full object-contain",
                 src: localVideo,
@@ -1532,7 +1570,7 @@
             ),
             h(
               "div",
-              { className: "grid gap-0" },
+              { className: "grid gap-3 md:gap-5" },
               h("video", {
                 className: mediaClass,
                 src: xiaoluoVideo,
@@ -1567,7 +1605,7 @@
               ),
               h(
                 "div",
-                { className: "grid grid-cols-2 gap-0 bg-black" },
+                { className: "grid grid-cols-2 gap-3 bg-black md:gap-5" },
                 xiaoluoPosterImages.map((image) =>
                   h("img", {
                     key: image.src,
@@ -1628,7 +1666,7 @@
             ),
             h(
               "div",
-              { className: "grid gap-0" },
+              { className: "grid gap-3 md:gap-5" },
               h("video", {
                 className: fengtianMediaClass,
                 src: fengtianVideo,
@@ -1734,7 +1772,7 @@
             ),
             h(
               "div",
-              { className: "grid gap-0" },
+              { className: "grid gap-3 md:gap-5" },
               h("video", {
                 className: longMediaClass,
                 src: longVideo,
@@ -1836,7 +1874,7 @@
             ),
             h(
               "div",
-              { className: "grid gap-0" },
+              { className: "grid gap-3 md:gap-5" },
               h("video", {
                 className: muguiyingMediaClass,
                 src: muguiyingVideo,
@@ -1895,7 +1933,7 @@
                 h("h3", { className: "mt-2 font-inter text-3xl font-black tracking-tight bright-gray md:text-5xl" }, "IP形象介绍与三视图"),
                 h(
                   "div",
-                  { className: "mt-6 grid grid-cols-2 gap-0" },
+                  { className: "mt-6 grid grid-cols-2 gap-3 md:gap-5" },
                   muguiyingIpImages.map((image) =>
                     h("img", {
                       key: image.src,
@@ -1913,7 +1951,7 @@
                 h("h3", { className: "mt-2 font-inter text-3xl font-black tracking-tight bright-gray md:text-5xl" }, "场景与衍生展示"),
                 h(
                   "div",
-                  { className: "mt-6 grid gap-0 md:grid-cols-2" },
+                  { className: "mt-6 grid gap-3 md:grid-cols-2 md:gap-5" },
                   muguiyingSceneImages.map((image) =>
                     h("img", {
                       key: image.src,
@@ -1925,7 +1963,7 @@
                 ),
                 h(
                   "div",
-                  { className: "grid gap-0 bg-black lg:aspect-[2.4/1] lg:grid-cols-[0.28fr_0.72fr] lg:overflow-hidden" },
+                  { className: "grid gap-3 bg-black md:gap-5 lg:aspect-[2.4/1] lg:grid-cols-[0.28fr_0.72fr] lg:overflow-hidden" },
                   h(
                     "div",
                     { className: "flex h-full min-w-0 items-center justify-center overflow-hidden" },
@@ -1978,7 +2016,7 @@
             ),
             h(
               "div",
-              { className: "grid gap-0" },
+              { className: "grid gap-3 md:gap-5" },
               h("video", {
                 className: dongpoMediaClass,
                 src: dongpoVideo,
@@ -1997,7 +2035,7 @@
                 h("h3", { className: "mt-2 font-inter text-3xl font-black tracking-tight bright-gray md:text-5xl" }, "项目画面"),
                 h(
                   "div",
-                  { className: "mt-6 grid gap-0" },
+                  { className: "mt-6 grid gap-3 md:gap-5" },
                   dongpoImages.map((image) =>
                     h("img", {
                       key: image.src,
@@ -2040,7 +2078,7 @@
             ),
             h(
               "div",
-              { className: "grid gap-0" },
+              { className: "grid gap-3 md:gap-5" },
               h("video", {
                 className: piyingxiMediaClass,
                 src: piyingxiVideo,
@@ -2125,7 +2163,7 @@
             ),
             h(
               "div",
-              { className: "grid gap-0" },
+              { className: "grid gap-3 md:gap-5" },
               h("video", {
                 className: yananVideoClass,
                 src: yananVideo,
@@ -2208,7 +2246,7 @@
             ),
             h(
               "div",
-              { className: "grid gap-0" },
+              { className: "grid gap-3 md:gap-5" },
               h("video", {
                 className: tianwenMediaClass,
                 src: tianwenVideo,
@@ -2296,7 +2334,7 @@
             ),
             h(
               "div",
-              { className: "grid gap-0" },
+              { className: "grid gap-3 md:gap-5" },
               h("video", {
                 className: qifengMediaClass,
                 src: qifengVideo,
@@ -2358,10 +2396,10 @@
             ),
             h(
               "div",
-              { className: "grid gap-0" },
+              { className: "grid gap-3 md:gap-5" },
               h(
                 "div",
-                { className: "grid gap-0", "data-work-video-scope": true },
+                { className: "grid gap-3 md:gap-5", "data-work-video-scope": true },
                 h(
                   "div",
                   { className: "mb-6" },
@@ -2471,7 +2509,7 @@
             ),
             h(
               "div",
-              { className: "grid gap-0" },
+              { className: "grid gap-3 md:gap-5" },
               h(
                 "div",
                 { className: "flex aspect-video w-full items-center justify-center bg-[#050505] ring-1 ring-white/10", "data-work-video-placeholder": true },
